@@ -1,0 +1,43 @@
+import React from "react";
+import PropTypes from "prop-types";
+import ButtonsNav from "../../ButtonsNav/ButtonsNav";
+import "./About.css";
+
+const About = ({
+  titleAbout,
+  contendioAbout,
+  titleFilosofia,
+  contenidoFilosofia,
+}) => {
+  return (
+    <div id="about" className="hidden_contenedor">
+      <div className="contenedor_about">
+        <div className="About_container">
+          <div className="row col-md-12 row-cols-md-6 justify-content-evenly">
+            <section className="about col-md-5">
+              <h3>{titleAbout}</h3>
+              <p dangerouslySetInnerHTML={{ __html: contendioAbout }} />
+              <div className="button_about">
+                <ButtonsNav text="Leer mas sobre nosotros" link="#" />
+              </div>
+            </section>
+
+            <section className="filosofia col-md-5">
+              <h3>{titleFilosofia}</h3>
+              <p dangerouslySetInnerHTML={{ __html: contenidoFilosofia }} />
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+About.propTypes = {
+  titleAbout: PropTypes.string.isRequired,
+  contendioAbout: PropTypes.string,
+  titleFilosofia: PropTypes.string.isRequired,
+  contenidoFilosofia: PropTypes.string,
+};
+
+export default About;
